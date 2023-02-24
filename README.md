@@ -22,6 +22,8 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [g2p_notifications_base](g2p_notifications_base/) | 15.0.1.1.0 |  | G2P Notifications: Base
+[g2p_notifications_fast2sms](g2p_notifications_fast2sms/) | 15.0.1.1.0 |  | G2P Notifications: Fast2SMS Service Provider
+[g2p_notifications_rest_api](g2p_notifications_rest_api/) | 15.0.1.1.0 |  | G2P Notifications: REST API
 
 [//]: # (end addons)
 
