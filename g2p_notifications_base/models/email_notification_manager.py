@@ -32,11 +32,13 @@ class EmailNotificationManager(models.Model):
                     mem.id, force_send=self.send_immediately
                 )
 
-    def on_otp_send(self, email=None, **data):
+    def on_otp_send(self, otp=None, email=None, **data):
         if not self.on_otp_send_template:
             return
         # TODO: Make the following asynchrous and in bulk
-        if email:
+        if otp and email:
+            data["otp"] = otp
+            data["email"] = email
             mail_values = {
                 "subject": self.on_otp_send_template.subject,
                 "email_to": email,

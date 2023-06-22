@@ -36,11 +36,13 @@ class SMSNotificationManager(models.Model):
         # TODO: to be implemented
         return
 
-    def on_otp_send(self, phone=None, **data):
+    def on_otp_send(self, otp=None, phone=None, **data):
         if not self.on_otp_send_template:
             return
         # TODO: Make the following asynchrous and in bulk
-        if phone:
+        if otp and phone:
+            data["otp"] = otp
+            data["phone"] = phone
             body = self.on_otp_send_template._render_template(
                 self.on_otp_send_template.body,
                 self._name,
