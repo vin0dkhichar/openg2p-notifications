@@ -45,6 +45,7 @@
                         <field name="on_enrolled_in_program_template" />
                         <field name="on_cycle_started_template" />
                         <field name="on_cycle_ended_template" />
+                        <field name="on_otp_send_template" />
                     </group>
                     <group string="Settings">
                         <field name="send_api_endpoint" />

@@ -17,6 +17,7 @@ class EmailNotificationManager(models.Model):
     on_enrolled_in_program_template = fields.Many2one("mail.template")
     on_cycle_started_template = fields.Many2one("mail.template")
     on_cycle_ended_template = fields.Many2one("mail.template")
+    on_otp_send_template = fields.Many2one("mail.template")
 
     def on_enrolled_in_program(self, program_memberships):
         if not self.on_enrolled_in_program_template:
@@ -30,6 +31,17 @@ class EmailNotificationManager(models.Model):
                 self.on_enrolled_in_program_template.send_mail(
                     mem.id, force_send=self.send_immediately
                 )
+
+    def on_otp_send(self, partner, otp_value):
+        if not self.on_otp_send_template:
+            return
+        # TODO: Make the following asynchrous and in bulk
+        if partner.notification_preference in self.notification_types and partner.email:
+            return self.on_otp_send_template.send_mail(
+                partner.id,
+                force_send=self.send_immediately,
+                email_values={"otp_value": otp_value},
+            )
 
     def on_cycle_started(self, program_memberships, cycle_id):
         if not self.on_cycle_started_template:
