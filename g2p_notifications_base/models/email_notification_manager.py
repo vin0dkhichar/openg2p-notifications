@@ -32,16 +32,28 @@ class EmailNotificationManager(models.Model):
                     mem.id, force_send=self.send_immediately
                 )
 
-    def on_otp_send(self, partner, otp_value):
+    def on_otp_send(self, email=None, **data):
         if not self.on_otp_send_template:
             return
         # TODO: Make the following asynchrous and in bulk
-        if partner.notification_preference in self.notification_types and partner.email:
-            return self.on_otp_send_template.send_mail(
-                partner.id,
-                force_send=self.send_immediately,
-                email_values={"otp_value": otp_value},
-            )
+        if email:
+            mail_values = {
+                "subject": self.on_otp_send_template.subject,
+                "email_to": email,
+                "body_html": self.on_otp_send_template._render_template(
+                    self.on_otp_send_template.body_html,
+                    self._name,
+                    [
+                        self.id,
+                    ],
+                    add_context=data,
+                    engine="qweb",
+                )[self.id],
+            }
+            mail = self.env["mail.mail"].create(mail_values)
+            mail.send()
+            return mail
+        return None
 
     def on_cycle_started(self, program_memberships, cycle_id):
         if not self.on_cycle_started_template:

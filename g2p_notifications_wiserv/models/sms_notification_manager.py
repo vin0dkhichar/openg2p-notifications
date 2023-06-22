@@ -68,5 +68,5 @@ class WiservNotificationManager(models.Model):
             MobileNo=phone,
             Message=body,
         )
-        _logger.debug("$$------------Response%s", response)
+        _logger.debug("$$------------Response %s", response)
         return response

@@ -19,6 +19,7 @@ class SMSNotificationManager(models.Model):
             self.on_enrolled_in_program_template.body,
             "g2p.program_membership",
             [mem.id for mem in program_memberships],
+            engine="inline_template",
         )
         for mem in program_memberships:
             self.send_sms_to_membership(mem, send_sms_body_list.get(mem.id, None))
@@ -35,19 +36,22 @@ class SMSNotificationManager(models.Model):
         # TODO: to be implemented
         return
 
-    def on_otp_send(self, partner, otp_value):
+    def on_otp_send(self, phone=None, **data):
         if not self.on_otp_send_template:
             return
         # TODO: Make the following asynchrous and in bulk
-        send_sms_body_list = self.on_enrolled_in_program_template._render_template(
-            self.on_enrolled_in_program_template.body,
-            "res.partner",
-            [
-                partner.id,
-            ],
-            add_context={"otp_value": otp_value},
-        )
-        return self.send_sms(partner.phone, send_sms_body_list.get(partner.id, None))
+        if phone:
+            body = self.on_otp_send_template._render_template(
+                self.on_otp_send_template.body,
+                self._name,
+                [
+                    self.id,
+                ],
+                add_context=data,
+                engine="inline_template",
+            )[self.id]
+            return self.send_sms(phone, body)
+        return None
 
     def send_sms_to_membership(self, membership, body):
         if (
