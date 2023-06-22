@@ -12,6 +12,7 @@
     ],
     "data": [
         "views/email_notification_manager.xml",
+        "views/sms_notification_manager.xml",
         "views/registrant.xml",
         "security/ir.model.access.csv",
     ],

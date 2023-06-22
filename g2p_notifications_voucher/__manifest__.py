@@ -13,6 +13,7 @@
     ],
     "data": [
         "views/email_notification_manager.xml",
+        "views/sms_notification_manager.xml",
     ],
     "assets": {
         "web.assets_backend": [],

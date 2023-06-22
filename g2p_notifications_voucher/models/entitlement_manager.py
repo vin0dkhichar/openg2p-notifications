@@ -12,7 +12,5 @@ class G2PVoucherEntitlementManagerNotification(models.Model):
         )._generate_vouchers(entitlements)
         notif_managers = self.program_id.get_managers(constants.MANAGER_NOTIFICATION)
         for notif_manager in notif_managers:
-            # TODO: support other types. Now only email
-            if "email" in notif_manager.notification_types:
-                notif_manager.on_generate_voucher(entitlements)
+            notif_manager.on_generate_voucher(entitlements)
         return err_count, files
