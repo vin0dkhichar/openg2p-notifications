@@ -17,6 +17,7 @@ class EmailNotificationManager(models.Model):
     on_enrolled_in_program_template = fields.Many2one("mail.template")
     on_cycle_started_template = fields.Many2one("mail.template")
     on_cycle_ended_template = fields.Many2one("mail.template")
+    on_otp_send_template = fields.Many2one("mail.template")
 
     def on_enrolled_in_program(self, program_memberships):
         if not self.on_enrolled_in_program_template:
@@ -30,6 +31,31 @@ class EmailNotificationManager(models.Model):
                 self.on_enrolled_in_program_template.send_mail(
                     mem.id, force_send=self.send_immediately
                 )
+
+    def on_otp_send(self, otp=None, email=None, **data):
+        if not self.on_otp_send_template:
+            return
+        # TODO: Make the following asynchrous and in bulk
+        if otp and email:
+            data["otp"] = otp
+            data["email"] = email
+            mail_values = {
+                "subject": self.on_otp_send_template.subject,
+                "email_to": email,
+                "body_html": self.on_otp_send_template._render_template(
+                    self.on_otp_send_template.body_html,
+                    self._name,
+                    [
+                        self.id,
+                    ],
+                    add_context=data,
+                    engine="qweb",
+                )[self.id],
+            }
+            mail = self.env["mail.mail"].create(mail_values)
+            mail.send()
+            return mail
+        return None
 
     def on_cycle_started(self, program_memberships, cycle_id):
         if not self.on_cycle_started_template:

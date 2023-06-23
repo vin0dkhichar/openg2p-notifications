@@ -16,44 +16,21 @@
     <record id="view_notification_manager_fast2sms_form" model="ir.ui.view">
         <field name="name">view_notification_manager_fast2sms_form</field>
         <field name="model">g2p.program.notification.manager.fast2sms</field>
+        <field name="inherit_id" ref="g2p_programs.view_notification_manager_sms_form" />
+        <field name="mode">primary</field>
         <field name="priority">1</field>
         <field name="arch" type="xml">
-            <form string="fast2sms Notification Manager">
-                <sheet>
-                    <div class="oe_button_box" name="button_box" />
-                    <div class="oe_title mb24">
-                        <label for="name" string="Name:" />
-                        <h1>
-                            <field id="name" name="name" placeholder="Enter the Manager Name..." />
-                        </h1>
-                        <label
-                            for="program_id"
-                            string="Program:"
-                            invisible="context.get('default_program_id',False)"
-                        />
-                        <h2 invisible="context.get('default_program_id',False)">
-                            <field
-                                id="program_id"
-                                name="program_id"
-                                placeholder="Select a program..."
-                                options="{'no_open':True,'no_create':True,'no_create_edit':True}"
-                                invisible="context.get('default_program_id',False)"
-                            />
-                        </h2>
-                    </div>
-                    <group string="TEMPLATES">
-                        <field name="on_enrolled_in_program_template" />
-                        <field name="on_cycle_started_template" />
-                        <field name="on_cycle_ended_template" />
-                    </group>
-                    <group string="Settings">
-                        <field name="send_api_endpoint" />
-                        <field name="access_token" password="True" />
-                        <field name="sms_language" />
-                        <field name="sms_route" />
-                    </group>
-                </sheet>
-            </form>
+            <xpath expr="//form" position="attributes">
+                <attribute name="name">Fast2SMS Notification Manager</attribute>
+            </xpath>
+            <xpath expr="//group[contains(text(), TEMPLATES)]" position="after">
+                <group string="Settings">
+                    <field name="send_api_endpoint" />
+                    <field name="access_token" password="True" />
+                    <field name="sms_language" />
+                    <field name="sms_route" />
+                </group>
+            </xpath>
         </field>
     </record>
 
