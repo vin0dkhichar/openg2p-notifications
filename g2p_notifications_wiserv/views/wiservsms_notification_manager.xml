@@ -25,9 +25,9 @@
             </xpath>
             <xpath expr="//group[contains(text(), TEMPLATES)]" position="after">
                     <group string="Settings">
-                        <field name="api_url" />
-                        <field name="user_name" />
-                        <field name="wiserv_password" password="True" />
+                        <field name="api_url" required="True" />
+                        <field name="user_name" required="True" />
+                        <field name="wiserv_password" password="True" required="True" />
                     </group>
             </xpath>
             <xpath expr="//sheet" position="after">

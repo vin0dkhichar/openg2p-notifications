@@ -31,9 +31,9 @@ class WiservNotificationManager(models.Model):
         "mail.activity.mixin",
     ]
 
-    api_url = fields.Char("API URL", required=True)
-    user_name = fields.Char(required=True)
-    wiserv_password = fields.Char("Password", required=True)
+    api_url = fields.Char("API URL")
+    user_name = fields.Char()
+    wiserv_password = fields.Char("Password")
 
     def send_sms_to_membership(self, membership, body):
         if (
