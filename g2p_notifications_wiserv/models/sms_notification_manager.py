@@ -42,31 +42,33 @@ class WiservNotificationManager(models.Model):
             and body
         ):
             if self.api_url and self.user_name and self.wiserv_password:
-                try:
-                    return self.send_sms(membership.partner_id.phone, body)
-                except Exception as e:
-                    # Handle general exception
-                    _logger.exception("Error occurred during sendMessage:%s" % e)
-                    error_msg = f"Error occurred during sendMessage to this partner: {membership.partner_id.name} ⟶ {e}"
-                    self.message_post(
-                        body=error_msg, subject=_("Wirserv Failure Response")
-                    )
-                    return None
+                return self.send_sms(
+                    membership.partner_id.phone,
+                    body,
+                    partner_name=membership.partner_id.name,
+                )
             else:
                 raise UserError(
                     _("Please configure Wiserv SMS configuration correctly.")
                 )
 
-    def send_sms(self, phone, body):
+    def send_sms(self, phone, body, partner_name=""):
         if not (self.api_url and self.user_name and self.wiserv_password):
             raise UserError(_("Please configure Wiserv SMS configuration correctly."))
 
-        client = Client(self.api_url)
-        response = client.service.sendMessage(
-            UserName=self.user_name,
-            PassWord=self.wiserv_password,
-            MobileNo=phone,
-            Message=body,
-        )
-        _logger.debug("$$------------Response %s", response)
-        return response
+        try:
+            client = Client(self.api_url)
+            response = client.service.sendMessage(
+                UserName=self.user_name,
+                PassWord=self.wiserv_password,
+                MobileNo=phone,
+                Message=body,
+            )
+            _logger.info("Wiserv API Response: %s", response)
+            return response
+        except Exception as e:
+            # Handle general exception
+            _logger.exception("Error occurred during sendMessage:%s" % e)
+            error_msg = f"Error occurred during sendMessage to this partner: {partner_name} ⟶ {e}"
+            self.message_post(body=error_msg, subject=_("Wiserv Failure Response"))
+            return None

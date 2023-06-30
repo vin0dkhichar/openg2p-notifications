@@ -39,19 +39,25 @@ class EmailNotificationManager(models.Model):
         if otp and email:
             data["otp"] = otp
             data["email"] = email
-            mail_values = {
-                "subject": self.on_otp_send_template.subject,
-                "email_to": email,
-                "body_html": self.on_otp_send_template._render_template(
-                    self.on_otp_send_template.body_html,
-                    self._name,
-                    [
-                        self.id,
-                    ],
-                    add_context=data,
-                    engine="qweb",
-                )[self.id],
-            }
+            mail_values = self.on_otp_send_template.generate_email(
+                self.id,
+                [
+                    "subject",
+                    "email_from",
+                    "reply_to",
+                    "email_cc",
+                ],
+            )
+            mail_values["email_to"] = email
+            mail_values["body_html"] = self.on_otp_send_template._render_template(
+                self.on_otp_send_template.body_html,
+                self._name,
+                [
+                    self.id,
+                ],
+                add_context=data,
+                engine="qweb",
+            )[self.id]
             mail = self.env["mail.mail"].create(mail_values)
             mail.send()
             return mail
