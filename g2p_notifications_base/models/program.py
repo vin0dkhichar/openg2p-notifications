@@ -1,6 +1,7 @@
 import logging
 
 from odoo import _, models
+from odoo.exceptions import UserError
 
 _logger = logging.getLogger(__name__)
 
@@ -22,16 +23,4 @@ class G2PProgram(models.Model):
             for mem in partners_to_notify:
                 mem.is_enrolled_notification_sent = True
         else:
-            return {
-                "type": "ir.actions.client",
-                "tag": "display_notification",
-                "params": {
-                    "title": _("Notification"),
-                    "message": _("No Notification Manager defined."),
-                    "sticky": False,
-                    "type": "danger",
-                    "next": {
-                        "type": "ir.actions.act_window_close",
-                    },
-                },
-            }
+            raise UserError(_("No Notification Manager defined."))
