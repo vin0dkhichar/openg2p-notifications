@@ -6,7 +6,7 @@
     "author": "OpenG2P",
     "website": "https://openg2p.org",
     "license": "Other OSI approved licence",
-    "development_status": "Alpha",
+    "development_status": "Production/Stable",
     "depends": ["g2p_notifications_base", "mail"],
     "external_dependencies": {"python": ["zeep"]},
     "data": [
