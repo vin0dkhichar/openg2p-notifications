@@ -22,7 +22,7 @@ class G2PProgram(models.Model):
         if notification_managers:
             for manager in notification_managers:
                 if manager:
-                    manager.manager_ref_id.on_enrolled_in_program(partners_to_notify)
+                    manager.on_enrolled_in_program(partners_to_notify)
             for mem in partners_to_notify:
                 mem.is_enrolled_notification_sent = True
         else:
