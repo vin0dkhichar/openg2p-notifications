@@ -1,15 +1,13 @@
 
 <!-- /!\ Non OCA Context : Set here the badge of your runbot / runboat instance. -->
-[![Pre-commit Status](https://github.com/OpenG2P/openg2p-notifications/actions/workflows/pre-commit.yml/badge.svg?branch=15.0-1.1.0)](https://github.com/OpenG2P/openg2p-notifications/actions/workflows/pre-commit.yml?query=branch%3A15.0-1.1.0)
 [![Build Status](https://github.com/OpenG2P/openg2p-notifications/actions/workflows/test.yml/badge.svg?branch=15.0-1.1.0)](https://github.com/OpenG2P/openg2p-notifications/actions/workflows/test.yml?query=branch%3A15.0-1.1.0)
-[![codecov](https://codecov.io/gh/OpenG2P/openg2p-notifications/branch/15.0-1.1.0/graph/badge.svg)](https://codecov.io/gh/OpenG2P/openg2p-notifications)
 <!-- /!\ Non OCA Context : Set here the badge of your translation instance. -->
 
 <!-- /!\ do not modify above this line -->
 
 # OpenG2P Notifications
 
-This repo is contains modules used by OpenG2P for Notifications
+This repo contains modules used by OpenG2P for Notifications. Refer to [OpenG2P Docs](https://docs.openg2p.org/v/1.1).
 
 <!-- /!\ do not modify below this line -->
 
