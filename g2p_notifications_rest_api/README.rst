@@ -10,16 +10,21 @@ G2P Notifications: REST API
    !! source digest: sha256:17f544da76a15171ca76e883424d930605553e1efb0248a5ec9dc1555c81fd5d
    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-.. |badge1| image:: https://img.shields.io/badge/maturity-Production%2FStable-green.png
+.. |badge1| image:: https://img.shields.io/badge/maturity-Alpha-red.png
     :target: https://odoo-community.org/page/development-status
-    :alt: Production/Stable
+    :alt: Alpha
 .. |badge2| image:: https://img.shields.io/badge/github-OpenG2P%2Fopeng2p--notifications-lightgray.png?logo=github
-    :target: https://github.com/OpenG2P/openg2p-notifications/tree/15.0-1.1.0/g2p_notifications_rest_api
+    :target: https://github.com/OpenG2P/openg2p-notifications/tree/15.0-develop/g2p_notifications_rest_api
     :alt: OpenG2P/openg2p-notifications
 
 |badge1| |badge2|
 
 This module adds REST API support to OpenG2P Notifications.
+
+.. IMPORTANT::
+   This is an alpha version, the data model and design can change at any time without warning.
+   Only for development or testing purpose, do not use in production.
+   `More details on development status <https://odoo-community.org/page/development-status>`_
 
 **Table of contents**
 
@@ -31,8 +36,8 @@ Bug Tracker
 
 Bugs are tracked on `GitHub Issues <https://github.com/OpenG2P/openg2p-notifications/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
-If you spotted it first, help us smashing it by providing a detailed and welcomed
-`feedback <https://github.com/OpenG2P/openg2p-notifications/issues/new?body=module:%20g2p_notifications_rest_api%0Aversion:%2015.0-1.1.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+If you spotted it first, help us to smash it by providing a detailed and welcomed
+`feedback <https://github.com/OpenG2P/openg2p-notifications/issues/new?body=module:%20g2p_notifications_rest_api%0Aversion:%2015.0-develop%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -47,6 +52,6 @@ Authors
 Maintainers
 ~~~~~~~~~~~
 
-This module is part of the `OpenG2P/openg2p-notifications <https://github.com/OpenG2P/openg2p-notifications/tree/15.0-1.1.0/g2p_notifications_rest_api>`_ project on GitHub.
+This module is part of the `OpenG2P/openg2p-notifications <https://github.com/OpenG2P/openg2p-notifications/tree/15.0-develop/g2p_notifications_rest_api>`_ project on GitHub.
 
 You are welcome to contribute.
