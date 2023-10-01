@@ -18,6 +18,7 @@ class EmailNotificationManager(models.Model):
     on_cycle_started_template = fields.Many2one("mail.template")
     on_cycle_ended_template = fields.Many2one("mail.template")
     on_otp_send_template = fields.Many2one("mail.template")
+    on_payment_send_template = fields.Many2one("mail.template")
 
     def on_enrolled_in_program(self, program_memberships):
         if not self.on_enrolled_in_program_template:
@@ -62,6 +63,26 @@ class EmailNotificationManager(models.Model):
             mail.send()
             return mail
         return None
+
+    def on_payment_send(self, payment_batch):
+        if not self.on_payment_send_template:
+            return
+
+        payments_to_notify = [
+            payment
+            for payment in payment_batch.payment_ids
+            if payment.status in ("paid",) and not payment.is_payment_notification_sent
+        ]
+
+        for res in payments_to_notify:
+            if (
+                res.partner_id.notification_preference in self.notification_types
+                and res.partner_id.email
+            ):
+                self.on_payment_send_template.send_mail(
+                    res.id, force_send=self.send_immediately
+                )
+                res.is_payment_notification_sent = True
 
     def on_cycle_started(self, program_memberships, cycle_id):
         if not self.on_cycle_started_template:

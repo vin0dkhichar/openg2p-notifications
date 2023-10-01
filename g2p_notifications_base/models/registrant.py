@@ -26,3 +26,9 @@ class G2PProgramMembership(models.Model):
     _inherit = "g2p.program_membership"
 
     is_enrolled_notification_sent = fields.Boolean(default=False)
+
+
+class G2PPayment(models.Model):
+    _inherit = "g2p.payment"
+
+    is_payment_notification_sent = fields.Boolean(default=False)
