@@ -64,13 +64,13 @@ class EmailNotificationManager(models.Model):
             return mail
         return None
 
-    def on_payment_send(self, payment_batch):
+    def on_payment_send(self, batch):
         if not self.on_payment_send_template:
             return
 
         payments_to_notify = [
             payment
-            for payment in payment_batch.payment_ids
+            for payment in batch.payment_ids
             if payment.status in ("paid",) and not payment.is_payment_notification_sent
         ]
 
