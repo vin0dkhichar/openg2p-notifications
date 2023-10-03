@@ -44,6 +44,11 @@ msgid "Created on"
 msgstr ""
 
 #. module: g2p_notifications_base
+#: model:ir.model,name:g2p_notifications_base.model_g2p_program_payment_manager_default
+msgid "Default Payment Manager"
+msgstr ""
+
+#. module: g2p_notifications_base
 #: model:ir.model.fields,field_description:g2p_notifications_base.field_g2p_program_notification_manager_email__display_name
 msgid "Display Name"
 msgstr ""
@@ -78,6 +83,11 @@ msgstr ""
 #. module: g2p_notifications_base
 #: model:ir.model.fields,field_description:g2p_notifications_base.field_g2p_program_membership__is_enrolled_notification_sent
 msgid "Is Enrolled Notification Sent"
+msgstr ""
+
+#. module: g2p_notifications_base
+#: model:ir.model.fields,field_description:g2p_notifications_base.field_g2p_payment__is_payment_notification_sent
+msgid "Is Payment Notification Sent"
 msgstr ""
 
 #. module: g2p_notifications_base
@@ -145,6 +155,16 @@ msgstr ""
 #: model:ir.model.fields,field_description:g2p_notifications_base.field_g2p_program_notification_manager_email__on_otp_send_template
 #: model:ir.model.fields,field_description:g2p_notifications_base.field_g2p_program_notification_manager_sms__on_otp_send_template
 msgid "On Otp Send Template"
+msgstr ""
+
+#. module: g2p_notifications_base
+#: model:ir.model.fields,field_description:g2p_notifications_base.field_g2p_program_notification_manager_email__on_payment_send_template
+msgid "On Payment Send Template"
+msgstr ""
+
+#. module: g2p_notifications_base
+#: model:ir.model,name:g2p_notifications_base.model_g2p_payment
+msgid "Payment"
 msgstr ""
 
 #. module: g2p_notifications_base
