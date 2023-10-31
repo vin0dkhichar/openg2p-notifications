@@ -10,6 +10,7 @@ class SMSNotificationManager(models.Model):
     on_cycle_started_template = fields.Many2one("sms.template")
     on_cycle_ended_template = fields.Many2one("sms.template")
     on_otp_send_template = fields.Many2one("sms.template")
+    on_payment_send_template = fields.Many2one("sms.template")
 
     def on_enrolled_in_program(self, program_memberships):
         if not self.on_enrolled_in_program_template:
@@ -63,6 +64,13 @@ class SMSNotificationManager(models.Model):
         ):
             return self.send_sms(membership.partner_id.phone, body)
         return None
+
+    def on_payment_send(self, batch):
+        if not self.on_payment_send_template:
+            return
+
+        # TODO: to be implemented
+        return
 
     def send_sms(self, phone, body):
         # TODO: To be Implemented.
