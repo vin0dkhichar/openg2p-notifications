@@ -99,6 +99,11 @@ msgid "On Otp Send Template"
 msgstr ""
 
 #. module: g2p_notifications_fast2sms
+#: model:ir.model.fields,field_description:g2p_notifications_fast2sms.field_g2p_program_notification_manager_fast2sms__on_payment_send_template
+msgid "On Payment Send Template"
+msgstr ""
+
+#. module: g2p_notifications_fast2sms
 #: model:ir.model.fields,field_description:g2p_notifications_fast2sms.field_g2p_program_notification_manager_fast2sms__program_id
 msgid "Program"
 msgstr ""
