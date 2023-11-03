@@ -159,6 +159,7 @@ msgstr ""
 
 #. module: g2p_notifications_base
 #: model:ir.model.fields,field_description:g2p_notifications_base.field_g2p_program_notification_manager_email__on_payment_send_template
+#: model:ir.model.fields,field_description:g2p_notifications_base.field_g2p_program_notification_manager_sms__on_payment_send_template
 msgid "On Payment Send Template"
 msgstr ""
 
