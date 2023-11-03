@@ -232,6 +232,11 @@ msgid "On Otp Send Template"
 msgstr ""
 
 #. module: g2p_notifications_wiserv
+#: model:ir.model.fields,field_description:g2p_notifications_wiserv.field_g2p_program_notification_manager_wiserv__on_payment_send_template
+msgid "On Payment Send Template"
+msgstr ""
+
+#. module: g2p_notifications_wiserv
 #: model:ir.model.fields,field_description:g2p_notifications_wiserv.field_g2p_program_notification_manager_wiserv__wiserv_password
 msgid "Password"
 msgstr ""
