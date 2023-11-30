@@ -25,5 +25,18 @@ class G2PProgram(models.Model):
                     manager.on_enrolled_in_program(partners_to_notify)
             for mem in partners_to_notify:
                 mem.is_enrolled_notification_sent = True
+                message = _("Notifications are initiated")
+                return {
+                    "type": "ir.actions.client",
+                    "tag": "display_notification",
+                    "params": {
+                        "title": _("Notification"),
+                        "message": message,
+                        "sticky": True,
+                        "next": {
+                            "type": "ir.actions.act_window_close",
+                        },
+                    },
+                }
         else:
             raise UserError(_("No Notification Manager defined."))

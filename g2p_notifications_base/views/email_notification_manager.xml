@@ -38,6 +38,7 @@
                                 placeholder="Select a program..."
                                 options="{'no_open':True,'no_create':True,'no_create_edit':True}"
                                 invisible="context.get('default_program_id',False)"
+                                domain="[('state','=','active')]"
                             />
                         </h2>
                     </div>
