@@ -127,10 +127,22 @@ msgid "None"
 msgstr ""
 
 #. module: g2p_notifications_base
+#: code:addons/g2p_notifications_base/models/program.py:0
+#, python-format
+msgid "Notification"
+msgstr ""
+
+#. module: g2p_notifications_base
 #: model:ir.model.fields,field_description:g2p_notifications_base.field_g2p_program_membership__notification_preference
 #: model:ir.model.fields,field_description:g2p_notifications_base.field_res_partner__notification_preference
 #: model:ir.model.fields,field_description:g2p_notifications_base.field_res_users__notification_preference
 msgid "Notification Preference"
+msgstr ""
+
+#. module: g2p_notifications_base
+#: code:addons/g2p_notifications_base/models/program.py:0
+#, python-format
+msgid "Notifications are initiated"
 msgstr ""
 
 #. module: g2p_notifications_base
