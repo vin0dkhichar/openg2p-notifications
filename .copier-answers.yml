@@ -11,7 +11,7 @@ github_enable_makepot: true
 github_enable_stale_action: false
 github_enforce_dev_status_compatibility: true
 include_wkhtmltopdf: false
-odoo_version: 15.0
+odoo_version: 17.0
 org_name: OpenG2P
 org_slug: OpenG2P
 rebel_module_groups: []

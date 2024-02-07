@@ -13,11 +13,17 @@ G2P Notifications: REST API
 .. |badge1| image:: https://img.shields.io/badge/maturity-Alpha-red.png
     :target: https://odoo-community.org/page/development-status
     :alt: Alpha
-.. |badge2| image:: https://img.shields.io/badge/github-OpenG2P%2Fopeng2p--notifications-lightgray.png?logo=github
-    :target: https://github.com/OpenG2P/openg2p-notifications/tree/15.0-develop/g2p_notifications_rest_api
-    :alt: OpenG2P/openg2p-notifications
+.. |badge2| image:: https://img.shields.io/badge/github-OCA%2Fstorage-lightgray.png?logo=github
+    :target: https://github.com/OCA/storage/tree/17.0/g2p_notifications_rest_api
+    :alt: OCA/storage
+.. |badge3| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
+    :target: https://translation.odoo-community.org/projects/storage-17-0/storage-17-0-g2p_notifications_rest_api
+    :alt: Translate me on Weblate
+.. |badge4| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/storage&target_branch=17.0
+    :alt: Try me on Runboat
 
-|badge1| |badge2|
+|badge1| |badge2| |badge3| |badge4|
 
 This module adds REST API support to OpenG2P Notifications.
 
@@ -34,10 +40,10 @@ This module adds REST API support to OpenG2P Notifications.
 Bug Tracker
 ===========
 
-Bugs are tracked on `GitHub Issues <https://github.com/OpenG2P/openg2p-notifications/issues>`_.
+Bugs are tracked on `GitHub Issues <https://github.com/OCA/storage/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OpenG2P/openg2p-notifications/issues/new?body=module:%20g2p_notifications_rest_api%0Aversion:%2015.0-develop%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/storage/issues/new?body=module:%20g2p_notifications_rest_api%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -45,13 +51,23 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * OpenG2P
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
-This module is part of the `OpenG2P/openg2p-notifications <https://github.com/OpenG2P/openg2p-notifications/tree/15.0-develop/g2p_notifications_rest_api>`_ project on GitHub.
+This module is maintained by the OCA.
 
-You are welcome to contribute.
+.. image:: https://odoo-community.org/logo.png
+   :alt: Odoo Community Association
+   :target: https://odoo-community.org
+
+OCA, or the Odoo Community Association, is a nonprofit organization whose
+mission is to support the collaborative development of Odoo features and
+promote its widespread use.
+
+This module is part of the `OCA/storage <https://github.com/OCA/storage/tree/17.0/g2p_notifications_rest_api>`_ project on GitHub.
+
+You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
