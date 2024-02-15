@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="g2p_programs.view_notification_manager_sms_form" />
         <field name="priority">100</field>
         <field name="arch" type="xml">
-            <xpath expr="//div[contains(text(), TEMPLATES)]" position="replace">
+            <xpath expr="//group[contains(text(), TEMPLATES)]" position="replace">
                 <group string="TEMPLATES">
                     <field name="on_enrolled_in_program_template" />
                     <field name="on_cycle_started_template" />
