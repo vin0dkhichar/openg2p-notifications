@@ -11,3 +11,4 @@ git+https://github.com/OpenG2P/openg2p-program@17.0-develop#subdirectory=g2p_pro
 git+https://github.com/OpenG2P/openg2p-program@17.0-develop#subdirectory=g2p_payment_files
 # git+https://github.com/OpenG2P/openg2p-program@17.0-develop#subdirectory=g2p_programs_rest_api
 git+https://github.com/OpenG2P/openg2p-program@17.0-develop#subdirectory=g2p_entitlement_voucher
+git+https://github.com/OpenG2P/openg2p-security@17.0-develop#subdirectory=g2p_encryption
