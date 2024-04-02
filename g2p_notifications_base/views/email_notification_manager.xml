@@ -42,7 +42,7 @@
                             />
                         </h2>
                     </div>
-                    <group string="TEMPLATES">
+                    <group name="notification_templates" string="TEMPLATES">
                         <field name="on_enrolled_in_program_template" />
                         <field name="on_cycle_started_template" />
                         <field name="on_cycle_ended_template" />

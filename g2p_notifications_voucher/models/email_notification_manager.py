@@ -16,6 +16,4 @@ class EmailNotificationManager(models.Model):
         # TODO: Make the following asynchrous and in bulk
         for entitlement in entitlements:
             if entitlement.partner_id.email:
-                self.on_generate_voucher_template.send_mail(
-                    entitlement.id, force_send=self.send_immediately
-                )
+                self.on_generate_voucher_template.send_mail(entitlement.id, force_send=self.send_immediately)
