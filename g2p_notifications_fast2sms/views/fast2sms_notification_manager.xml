@@ -23,14 +23,14 @@
             <xpath expr="//form" position="attributes">
                 <attribute name="name">Fast2SMS Notification Manager</attribute>
             </xpath>
-            <xpath expr="//group[contains(text(), TEMPLATES)]" position="after">
-                <group string="Settings">
+            <group name="notification_templates" position="after">
+                <group name="settings" string="Settings">
                     <field name="send_api_endpoint" />
                     <field name="access_token" password="True" />
                     <field name="sms_language" />
                     <field name="sms_route" />
                 </group>
-            </xpath>
+            </group>
         </field>
     </record>
 

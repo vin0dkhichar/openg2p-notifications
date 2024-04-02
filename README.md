@@ -23,9 +23,15 @@ addon | version | maintainers | summary
 --- | --- | --- | ---
 [g2p_notifications_base](g2p_notifications_base/) | 17.0.1.0.0 |  | G2P Notifications: Base
 [g2p_notifications_fast2sms](g2p_notifications_fast2sms/) | 17.0.1.0.0 |  | G2P Notifications: Fast2SMS Service Provider
-[g2p_notifications_rest_api](g2p_notifications_rest_api/) | 17.0.1.0.0 |  | G2P Notifications: REST API
 [g2p_notifications_voucher](g2p_notifications_voucher/) | 17.0.1.0.0 |  | G2P Notifications: Voucher
 [g2p_notifications_wiserv](g2p_notifications_wiserv/) | 17.0.1.0.0 |  | G2P Notifications: Wiserv SMS Service Provider
+
+
+Unported addons
+---------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[g2p_notifications_rest_api](g2p_notifications_rest_api/) | 17.0.1.0.0 (unported) |  | G2P Notifications: REST API
 
 [//]: # (end addons)
 
