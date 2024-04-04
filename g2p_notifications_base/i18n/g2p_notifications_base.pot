@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 15.0\n"
+"Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -91,11 +91,6 @@ msgid "Is Payment Notification Sent"
 msgstr ""
 
 #. module: g2p_notifications_base
-#: model:ir.model.fields,field_description:g2p_notifications_base.field_g2p_program_notification_manager_email____last_update
-msgid "Last Modified on"
-msgstr ""
-
-#. module: g2p_notifications_base
 #: model:ir.model.fields,field_description:g2p_notifications_base.field_g2p_program_notification_manager_email__write_uid
 msgid "Last Updated by"
 msgstr ""
@@ -116,6 +111,7 @@ msgid "Name:"
 msgstr ""
 
 #. module: g2p_notifications_base
+#. odoo-python
 #: code:addons/g2p_notifications_base/models/program.py:0
 #, python-format
 msgid "No Notification Manager defined."
@@ -127,6 +123,7 @@ msgid "None"
 msgstr ""
 
 #. module: g2p_notifications_base
+#. odoo-python
 #: code:addons/g2p_notifications_base/models/program.py:0
 #, python-format
 msgid "Notification"
@@ -140,6 +137,7 @@ msgid "Notification Preference"
 msgstr ""
 
 #. module: g2p_notifications_base
+#. odoo-python
 #: code:addons/g2p_notifications_base/models/program.py:0
 #, python-format
 msgid "Notifications are initiated"
