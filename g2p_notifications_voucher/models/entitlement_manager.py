@@ -7,9 +7,7 @@ class G2PVoucherEntitlementManagerNotification(models.Model):
     _inherit = "g2p.program.entitlement.manager.voucher"
 
     def _generate_vouchers(self, entitlements):
-        err_count, files = super(
-            G2PVoucherEntitlementManagerNotification, self
-        )._generate_vouchers(entitlements)
+        err_count, files = super()._generate_vouchers(entitlements)
         notif_managers = self.program_id.get_managers(constants.MANAGER_NOTIFICATION)
         for notif_manager in notif_managers:
             notif_manager.on_generate_voucher(entitlements)

@@ -23,13 +23,13 @@
             <xpath expr="//form" position="attributes">
                 <attribute name="name">Wiservsms Notification Manager</attribute>
             </xpath>
-            <xpath expr="//group[contains(text(), TEMPLATES)]" position="after">
-                    <group string="Settings">
-                        <field name="api_url" required="True" />
-                        <field name="user_name" required="True" />
-                        <field name="wiserv_password" password="True" required="True" />
-                    </group>
-            </xpath>
+            <group name="notification_templates" position="after">
+                <group name="settings" string="Settings">
+                    <field name="api_url" required="True" />
+                    <field name="user_name" required="True" />
+                    <field name="wiserv_password" password="True" required="True" />
+                </group>
+            </group>
             <xpath expr="//sheet" position="after">
                 <div class="oe_chatter">
                     <field name="message_follower_ids" />
