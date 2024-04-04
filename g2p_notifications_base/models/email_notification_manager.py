@@ -25,13 +25,8 @@ class EmailNotificationManager(models.Model):
             return
         # TODO: Make the following asynchrous and in bulk
         for mem in program_memberships:
-            if (
-                mem.partner_id.notification_preference in self.notification_types
-                and mem.partner_id.email
-            ):
-                self.on_enrolled_in_program_template.send_mail(
-                    mem.id, force_send=self.send_immediately
-                )
+            if mem.partner_id.notification_preference in self.notification_types and mem.partner_id.email:
+                self.on_enrolled_in_program_template.send_mail(mem.id, force_send=self.send_immediately)
 
     def on_otp_send(self, otp=None, email=None, **data):
         if not self.on_otp_send_template:
@@ -75,13 +70,8 @@ class EmailNotificationManager(models.Model):
         ]
 
         for res in payments_to_notify:
-            if (
-                res.partner_id.notification_preference in self.notification_types
-                and res.partner_id.email
-            ):
-                self.on_payment_send_template.send_mail(
-                    res.id, force_send=self.send_immediately
-                )
+            if res.partner_id.notification_preference in self.notification_types and res.partner_id.email:
+                self.on_payment_send_template.send_mail(res.id, force_send=self.send_immediately)
                 res.is_payment_notification_sent = True
 
     def on_cycle_started(self, program_memberships, cycle_id):

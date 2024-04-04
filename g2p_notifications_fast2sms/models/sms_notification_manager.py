@@ -43,5 +43,6 @@ class Fast2SMSNotificationManager(models.Model):
             headers={
                 "authorization": self.access_token,
             },
+            timeout=15,
         )
         return response.text

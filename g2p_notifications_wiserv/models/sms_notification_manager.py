@@ -48,9 +48,7 @@ class WiservNotificationManager(models.Model):
                     partner_name=membership.partner_id.name,
                 )
             else:
-                raise UserError(
-                    _("Please configure Wiserv SMS configuration correctly.")
-                )
+                raise UserError(_("Please configure Wiserv SMS configuration correctly."))
 
     def send_sms(self, phone, body, partner_name=""):
         if not (self.api_url and self.user_name and self.wiserv_password):
